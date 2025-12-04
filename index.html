@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisi-Kisi Evaluasi PPKn Kelas IX Semester I</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #495057;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+        
+        .section-title.pg::before { content: "📋"; }
+        .section-title.tf::before { content: "✅❌"; }
+        .section-title.fill::before { content: "📝"; }
+        .section-title.match::before { content: "🔗"; }
+        .section-title.essay::before { content: "📖"; }
+        
+        .question-card {
+            background: #f8f9fa;
+            border-left: 5px solid #3498db;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .question-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .competency-info {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .question-title {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .sub-info {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+        
+        .indicator {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            white-space: nowrap;
+            align-self: flex-start;
+        }
+        
+        .question-content {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #343a40;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .option {
+            padding: 10px 0;
+            color: #495057;
+            border-bottom: 1px dotted #e9ecef;
+        }
+        
+        .option:last-child {
+            border-bottom: none;
+        }
+        
+        .answer-section {
+            background: #e8f5e9;
+            padding: 18px;
+            border-radius: 6px;
+            margin-top: 20px;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .answer-label {
+            font-weight: 700;
+            color: #2e7d32;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .explanation {
+            background: #fff3e0;
+            padding: 18px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .explanation-label {
+            font-weight: 700;
+            color: #ef6c00;
+            margin-bottom: 10px;
+        }
+        
+        .true-false-question {
+            background: #f3e5f5;
+            padding: 18px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .correct-answer {
+            color: #2e7d32;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        
+        .wrong-answer {
+            color: #c62828;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        
+        .fill-question {
+            background: #e0f2f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .essay-question {
+            background: #fff9c4;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .essay-answer {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .essay-answer h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .essay-answer ul {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+        
+        .essay-answer li {
+            margin: 8px 0;
+            color: #495057;
+        }
+        
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .rubric {
+            background: #e1f5fe;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 4px solid #03a9f4;
+        }
+        
+        .rubric h4 {
+            color: #0277bd;
+            margin-bottom: 10px;
+        }
+        
+        .rubric-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px dotted #b3e5fc;
+        }
+        
+        .rubric-item:last-child {
+            border-bottom: none;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.95em;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        
+        .badge.pg { background: #3498db; color: white; }
+        .badge.tf { background: #e74c3c; color: white; }
+        .badge.fill { background: #9b59b6; color: white; }
+        .badge.match { background: #f39c12; color: white; }
+        .badge.essay { background: #27ae60; color: white; }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .question-header {
+                flex-direction: column;
+            }
+            
+            .indicator {
+                align-self: flex-start;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>KISI-KISI EVALUASI PPKN KELAS IX SEMESTER I</h1>
+            <p>Tema: Tradisi, Kearifan Lokal, Budaya, Hak & Kewajiban, Kemerdekaan Berpendapat</p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8">Disusun berdasarkan Kurikulum Merdeka | Tahun Ajaran 2024/2025</p>
+        </header>
+
+        <!-- BAGIAN A: PILIHAN GANDA -->
+        <section class="section">
+            <h2 class="section-title pg">A. Pilihan Ganda (20 Soal)</h2>
+            
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 1-7: Pengertian dan Contoh Tradisi, Kearifan Lokal, dan Budaya</div>
+                        <div class="sub-info">Capaian Kompetensi: Menumbuhkan sikap tanggungjawab dan berperan aktif dalam menjaga dan melestarikan praktik tradisi, kearifan lokal, dan budaya dalam masyarakat global</div>
+                        <div class="sub-info">Materi: Tradisi, Kearifan Lokal, dan Budaya</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C1-C2 <span class="badge pg">PG</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <div class="question-text">
+                        <strong>Contoh Soal (No. 1):</strong> Tradisi adalah....
+                    </div>
+                    <div class="options">
+                        <div class="option">a. Kebiasaan yang dilakukan oleh masyarakat secara turun-temurun</div>
+                        <div class="option">b. Norma yang dibuat oleh pemerintah</div>
+                        <div class="option">c. Hukum yang mengikat masyarakat</div>
+                        <div class="option">d. Peraturan sekolah yang harus ditaati</div>
+                    </div>
+                </div>
+                <div class="answer-section">
+                    <div class="answer-label">Jawaban: A</div>
+                    Ini adalah definisi tradisi sebagai warisan budaya yang diwariskan secara turun-temurun.
+                </div>
+                <div class="explanation">
+                    <div class="explanation-label">📝 Penjelasan Guru:</div>
+                    <p>Untuk soal 1-7, fokus pada <span class="highlight">pemahaman konseptual</span> dasar:</p>
+                    <ul>
+                        <li><strong>Tradisi:</strong> Praktik kolektif yang diwariskan (contoh: Nyepi di Bali, Sekaten di Yogyakarta)</li>
+                        <li><strong>Kearifan Lokal:</strong> Pengetahuan masyarakat dalam mengelola sumber daya (contoh: subak di Bali, sasi di Maluku)</li>
+                        <li><strong>Budaya:</strong> Sistem makna, simbol, dan praktik yang membentuk identitas komunitas</li>
+                    </ul>
+                    <p><strong>Strategi penilaian:</strong> Pastikan siswa dapat membedakan ketiganya dan memberikan contoh konkret dari daerah masing-masing.</p>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 8: Upaya Menjaga dan Melestarikan Tradisi, Kearifan Lokal, dan Budaya</div>
+                        <div class="sub-info">Capaian Kompetensi: Menumbuhkan sikap tanggungjawab dan berperan aktif dalam menjaga dan melestarikan praktik tradisi, kearifan lokal, dan budaya dalam masyarakat global</div>
+                        <div class="sub-info">Materi: Tradisi, Kearifan Lokal, dan Budaya</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C3 <span class="badge pg">PG</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <div class="question-text">
+                        <strong>Contoh Soal:</strong> Salah satu upaya pelestarian tradisi yang efektif di era globalisasi adalah....
+                    </div>
+                    <div class="options">
+                        <div class="option">a. Melarang total penggunaan teknologi dalam tradisi</div>
+                        <div class="option">b. Mengintegrasikan nilai-nilai tradisi dalam kurikulum pendidikan</div>
+                        <div class="option">c. Mengisolasi masyarakat dari pengaruh luar</div>
+                        <div class="option">d. Hanya mengandalkan generasi lama untuk melestarikan</div>
+                    </div>
+                </div>
+                <div class="answer-section">
+                    <div class="answer-label">Jawaban: B</div>
+                    Pendidikan adalah saluran paling efektif untuk internalisasi nilai-nilai tradisi pada generasi muda.
+                </div>
+                <div class="explanation">
+                    <div class="explanation-label">📝 Penjelasan Guru:</div>
+                    <p>Upaya pelestarian harus <span class="highlight">proaktif dan adaptif</span>, bukan reaktif:</p>
+                    <ul>
+                        <li><strong>Internalisasi:</strong> Melalui pendidikan formal (sekolah) dan non-formal (keluarga, pengajian)</li>
+                        <li><strong>Rekontekstualisasi:</strong> Menyandingkan tradisi dengan teknologi (misal: dokumentasi digital)</li>
+                        <li><strong>Partisipasi:</strong> Melibatkan seluruh elemen masyarakat, termasuk pemuda</li>
+                        <li><strong>Kebijakan:</strong> Perda pelindung dan insentif pemerintah</li>
+                    </ul>
+                    <p><strong>Evaluasi:</strong> Lihat kemampuan siswa mengidentifikasi strategi yang partisipatoris, bukan elitis.</p>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 9-10: Upaya Meningkatkan Ketahanan Budaya</div>
+                        <div class="sub-info">Capaian Kompetensi: Menumbuhkan sikap tanggungjawab dan berperan aktif dalam menjaga dan melestarikan praktik tradisi, kearifan lokal, dan budaya dalam masyarakat global</div>
+                        <div class="sub-info">Materi: Tradisi, Kearifan Lokal, dan Budaya</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C4 <span class="badge pg">PG</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <div class="question-text">
+                        <strong>Contoh Soal (No. 9):</strong> Ketahanan budaya masyarakat dapat diperkuat melalui....
+                    </div>
+                    <div class="options">
+                        <div class="option">a. Penguatan identitas lokal melalui simbol dan ritual budaya</div>
+                        <div class="option">b. Mengganti semua tradisi dengan budaya modern</div>
+                        <div class="option">c. Mengurangi frekuensi perayaan tradisional</div>
+                        <div class="option">d. Meniru budaya negara maju secara total</div>
+                    </div>
+                </div>
+                <div class="answer-section">
+                    <div class="answer-label">Jawaban: A</div>
+                    Identitas lokal adalah fondasi ketahanan budaya melawan homogenisasi global.
+                </div>
+                <div class="explanation">
+                    <div class="explanation-label">📝 Penjelasan Guru:</div>
+                    <p><strong>Ketahanan Budaya (Cultural Resilience):</strong> Kemampuan sistem budaya untuk <span class="highlight">beradaptasi tanpa kehilangan esensi</span> nilai-nilai inti:</p>
+                    <ul>
+                        <li><strong>Simbolik:</strong> Memperkuat ikon budaya (tari, pakaian adat, bahasa daerah)</li>
+                        <li><strong>Institusional:</strong> Mendirikan lembaga adat yang fungsional</li>
+                        <li><strong>Ekonomi Kreatif:</strong> Mengkomersialisasi budaya secara etis (contoh: desa wisata budaya)</li>
+                        <li><strong>Diplomasi:</strong> Memperkenalkan budaya ke dunia internasional</li>
+                    </ul>
+                    <p><strong>Catatan:</strong> Soal ini menguji kemampuan analisis siswa tentang strategi jangka panjang.</p>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 11: Penerapan Kemerdekaan Berpendapat di Sekolah</div>
+                        <div class="sub-info">Capaian Kompetensi: Mempraktikkan kemerdekaan berpendapat sebagai warga negara</div>
+                        <div class="sub-info">Materi: Kemerdekaan Berpendapat</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C3 <span class="badge pg">PG</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <div class="question-text">
+                        <strong>Contoh Soal:</strong> Bentuk penerapan kemerdekaan berpendapat di sekolah yang paling tepat adalah....
+                    </div>
+                    <div class="options">
+                        <div class="option">a. Mengkritik guru tanpa perlu alasan yang jelas</div>
+                        <div class="option">b. Aktif mengemukakan pendapat dalam forum OSIS dengan alasan logis</div>
+                        <div class="option">c. Menyebarkan hoaks di grup WhatsApp sekolah</div>
+                        <div class="option">d. Memaksa teman untuk menerima pendapat kita</div>
+                    </div>
+                </div>
+                <div class="answer-section">
+                    <div class="answer-label">Jawaban: B</div>
+                    Kemerdekaan berpendapat harus disertai tanggung jawab dan etika berargumentasi.
+                </div>
+                <div class="explanation">
+                    <div class="explanation-label">📝 Penjelasan Guru:</div>
+                    <p><strong>Kemerdekaan Berpendapat di Sekolah:</span> Bukan kebebasan tanpa batas, melainkan <span class="highlight">hak untuk berbicara dengan bertanggung jawab</span>:</p>
+                    <ul>
+                        <li><strong>Konteks:</strong> Forum yang terstruktur (debat, musyawarah OSIS, kelas)</li>
+                        <li><strong>Kaidah:</strong> Argumentasi logis, bukan emosional atau intimidasi</li>
+                        <li><strong>Batasan:</strong> Tidak mengandung SARA, hoaks, atau fitnah (Pasal 28J UUD 1945)</li>
+                        <li><strong>Penerapan:</strong> Melalui kegiatan ekstrakurikuler jurnalistik, debat, atau student council</li>
+                    </ul>
+                    <p><strong>Evaluasi:</strong> Lihat pemahaman siswa tentang konsep "hak berimbang kewajiban".</p>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 12-15: Penerapan Hak dan Kewajiban di Berbagai Lingkungan</div>
+                        <div class="sub-info">Capaian Kompetensi: Menerapkan hak dan kewajiban sebagai warga negara</div>
+                        <div class="sub-info">Materi: Hak & Kewajiban</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C2-C3 <span class="badge pg">PG</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <div class="question-text">
+                        <strong>Contoh Soal (No. 12):</strong> Di lingkungan keluarga, hak anak yang paling fundamental adalah....
+                    </div>
+                    <div class="options">
+                        <div class="option">a. Hak untuk mendapatkan pendidikan dan kasih sayang</div>
+                        <div class="option">b. Hak untuk memiliki ponsel terbaru</div>
+                        <div class="option">c. Hak untuk tidak pernah diatur orang tua</div>
+                        <div class="option">d. Hak untuk memilih sekolah tanpa mempertimbangkan kemampuan ekonomi</div>
+                    </div>
+                </div>
+                <div class="answer-section">
+                    <div class="answer-label">Jawaban: A</div>
+                    Pendidikan dan kasih sayang adalah hak dasar anak yang dijamin Konvensi Hak Anak dan UU Perlindungan Anak.
+                </div>
+                <div class="explanation">
+                    <div class="explanation-label">📝 Penjelasan Guru:</div>
+                    <p><strong>Hak di Lingkungan Keluarga:</strong> Berdasarkan UU No. 35 Tahun 2014 tentang Perlindungan Anak:</p>
+                    <ul>
+                        <li><strong>Hak Dasar:</strong> Kelangsungan hidup, tumbuh kembang, perlindungan, partisipasi</li>
+                        <li><strong>Pendidikan:</strong> Hak atas pendidikan dasar gratis dan pengembangan potensi</li>
+                        <li><strong>Kasus:</strong> Anak tidak boleh dijadikan alat perkara perceraian, harus terlindungi dari kekerasan</li>
+                    </ul>
+                    <p><strong>Diferensiasi Lingkungan:</strong> Soal 13-15 akan menguji penerapan di sekolah, masyarakat, dan negara.</p>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 16-19: Jenis-jenis Hak dan Kewajiban</div>
+                        <div class="sub-info">Capaian Kompetensi: Menerapkan hak dan kewajiban sebagai warga negara</div>
+                        <div class="sub-info">Materi: Hak & Kewajiban</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C1-C2 <span class="badge pg">PG</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <div class="question-text">
+                        <strong>Contoh Soal (No. 16):</strong> Hak warga negara untuk memilih pemimpin dalam pemilu termasuk hak....
+                    </div>
+                    <div class="options">
+                        <div class="option">a. Hak politik</div>
+                        <div class="option">b. Hak ekonomi</div>
+                        <div class="option">c. Hak sosial</div>
+                        <div class="option">d. Hak budaya</div>
+                    </div>
+                </div>
+                <div class="answer-section">
+                    <div class="answer-label">Jawaban: A</div>
+                    Memilih pemimpin adalah hak politik yang fundamental dalam demokrasi konstitusional.
+                </div>
+                <div class="explanation">
+                    <div class="explanation-label">📝 Penjelasan Guru:</div>
+                    <p><strong>Klasifikasi Hak (Universal Declaration of Human Rights):</span></p>
+                    <ul>
+                        <li><strong>Hak Sivil-Politik:</strong> Hidup, bebas dari penyiksaan, persamaan di depan hukum, politik (memilih, berkumpul)</li>
+                        <li><strong>Hak Ekonomi-Sosial-Budaya:</strong> Kerja, pendidikan, kesehatan, kebudayaan</li>
+                        <li><strong>Kewajiban:</span></strong> Iuran pajak, patuh hukum, bela negara, menghormati hak orang lain</li>
+                    </ul>
+                    <p><strong>Prinsip Kunci:</strong> Hak dan kewajiban bersifat <span class="highlight">inseparabel dan saling korelatif</span> (Pasal 27-28 UUD 1945).</p>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 20: Penerapan Hak dan Kewajiban sebagai Warga Negara</div>
+                        <div class="sub-info">Capaian Kompetensi: Menerapkan hak dan kewajiban sebagai warga negara</div>
+                        <div class="sub-info">Materi: Hak & Kewajiban</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C4 <span class="badge pg">PG</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <div class="question-text">
+                        <strong>Contoh Soal:</strong> Seorang warga negara yang secara aktif membayar pajak dan mengikuti pemilu telah menerapkan....
+                    </div>
+                    <div class="options">
+                        <div class="option">a. Hanya haknya saja</div>
+                        <div class="option">b. Hanya kewajibannya saja</div>
+                        <div class="option">c. Hak dan kewajiban secara seimbang</div>
+                        <div class="option">d. Tidak ada keduanya</div>
+                    </div>
+                </div>
+                <div class="answer-section">
+                    <div class="answer-label">Jawaban: C</div>
+                    Membayar pajak = kewajiban; Mengikuti pemilu = hak. Ini menunjukkan keseimbangan ideal.
+                </div>
+                <div class="explanation">
+                    <div class="explanation-label">📝 Penjelasan Guru:</div>
+                    <p><strong>Profil Warga Negara Ideal:</strong></p>
+                    <ul>
+                        <li><strong>Partisipatoris:</strong> Aktif dalam proses demokrasi (hak politik)</li>
+                        <li><strong>Konstitusional:</strong> Mematuhi kewajiban konstitusional (pajak, hukum)</li>
+                        <li><strong>Moral:</strong> Menghormati hak orang lain (batasan hak)</li>
+                    </ul>
+                    <p><strong>Evaluasi Tingkat Tinggi:</strong> Soal ini menguji kemampuan sintesis siswa dalam mengidentifikasi penerapan ganda hak dan kewajiban.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN B: BENAR/SALAH -->
+        <section class="section">
+            <h2 class="section-title tf">B. Pernyataan Benar/Salah (4 Soal)</h2>
+            
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 1: Jenis-jenis Hak dan Kewajiban</div>
+                        <div class="sub-info">Capaian Kompetensi: Menerapkan hak dan kewajiban sebagai warga negara</div>
+                        <div class="sub-info">Materi: Hak & Kewajiban</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C2 <span class="badge tf">B/S</span>
+                    </div>
+                </div>
+                <div class="true-false-question">
+                    <div class="question-text">
+                        <strong>Pernyataan:</strong> "Semua hak warga negara dapat dilaksanakan tanpa ada batasan sama sekali."
+                    </div>
+                    <div class="wrong-answer">❌ Jawaban: SALAH</div>
+                    <div class="explanation" style="margin-top: 15px;">
+                        <div class="explanation-label">📝 Analisis Guru:</div>
+                        <p>Hak warga negara dibatasi oleh <span class="highlight">hak orang lain, moral, kemanfaatan umum, dan ketertiban</span> (Pasal 28J UUD 1945). Contoh: Kebebasan berpendapat tidak termasuk menyebarkan hoaks atau ujaran kebencian.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 2: Upaya Meningkatkan Ketahanan Budaya</div>
+                        <div class="sub-info">Capaian Kompetensi: Menumbuhkan sikap tanggungjawab dan berperan aktif dalam menjaga dan melestarikan praktik tradisi, kearifan lokal, dan budaya dalam masyarakat global</div>
+                        <div class="sub-info">Materi: Tradisi, Kearifan Lokal, dan Budaya</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C3 <span class="badge tf">B/S</span>
+                    </div>
+                </div>
+                <div class="true-false-question">
+                    <div class="question-text">
+                        <strong>Pernyataan:</strong> "Globalisasi selalu berdampak negatif bagi kelestarian budaya lokal."
+                    </div>
+                    <div class="wrong-answer">❌ Jawaban: SALAH</div>
+                    <div class="explanation" style="margin-top: 15px;">
+                        <div class="explanation-label">📝 Analisis Guru:</div>
+                        <p>Globalisasi bersifat <span class="highlight">dialektis</span>. Dampaknya tergantung pada strategi respons masyarakat:</p>
+                        <ul>
+                            <li><strong>Positif:</strong> Media global dapat mempromosikan budaya lokal (contoh: tarian Bali di YouTube viral)</li>
+                            <li><strong>Negatif:</strong> Homogenisasi jika tidak ada filter dan penguatan identitas</li>
+                        </ul>
+                        <p><strong>Inti:</strong> Globalisasi adalah tantangan dan peluang bersamaan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 3: Upaya Menjaga dan Melestarikan Tradisi, Kearifan Lokal, dan Budaya</div>
+                        <div class="sub-info">Capaian Kompetensi: Menumbuhkan sikap tanggungjawab dan berperan aktif dalam menjaga dan melestarikan praktik tradisi, kearifan lokal, dan budaya dalam masyarakat global</div>
+                        <div class="sub-info">Materi: Tradisi, Kearifan Lokal, dan Budaya</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C2 <span class="badge tf">B/S</span>
+                    </div>
+                </div>
+                <div class="true-false-question">
+                    <div class="question-text">
+                        <strong>Pernyataan:</strong> "Melestarikan tradisi berarti melakukannya persis seperti nenek moyang tanpa perubahan."
+                    </div>
+                    <div class="wrong-answer">❌ Jawaban: SALAH</div>
+                    <div class="explanation" style="margin-top: 15px;">
+                        <div class="explanation-label">📝 Analisis Guru:</div>
+                        <p>Pelestarian yang dinamis melibatkan <span class="highlight">kontinuitas dan inovasi</span> (living tradition). Tradisi yang hidup mengalami reinterpretasi sesuai konteks zaman tanpa menghilangkan esensi nilainya. Contoh: Cara pengajaran pencak silat yang kini menggunakan video tutorial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 4: Pengertian Hak dan Kewajiban</div>
+                        <div class="sub-info">Capaian Kompetensi: Menerapkan hak dan kewajiban sebagai warga negara</div>
+                        <div class="sub-info">Materi: Hak & Kewajiban</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C1 <span class="badge tf">B/S</span>
+                    </div>
+                </div>
+                <div class="true-false-question">
+                    <div class="question-text">
+                        <strong>Pernyataan:</strong> "Hak adalah sesuatu yang wajib diterima, sedangkan kewajiban adalah sesuatu yang bisa dipilih untuk dilaksanakan."
+                    </div>
+                    <div class="wrong-answer">❌ Jawaban: SALAH</div>
+                    <div class="explanation" style="margin-top: 15px;">
+                        <div class="explanation-label">📝 Analisis Guru:</div>
+                        <p>Kedua konsep memiliki <span class="highlight">kekuatan mengikat yang sama</span>. Hak adalah klaim yang sah (bisa diwujudkan atau tidak tergantung konteks), sementara kewajiban adalah <strong>debitum moral dan hukum</strong> yang harus dilaksanakan. Tidak melaksanakan kewajiban bisa berakibat sanksi (misal: tidak bayar pajak = denda/pidana).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN C: ISIAN SINGKAT -->
+        <section class="section">
+            <h2 class="section-title fill">C. Isian Singkat (1 Soal)</h2>
+            
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 1: Upaya Menjaga dan Melestarikan Tradisi, Kearifan Lokal, dan Budaya</div>
+                        <div class="sub-info">Capaian Kompetensi: Menumbuhkan sikap tanggungjawab dan berperan aktif dalam menjaga dan melestarikan praktik tradisi, kearifan lokal, dan budaya dalam masyarakat global</div>
+                        <div class="sub-info">Materi: Tradisi, Kearifan Lokal, dan Budaya</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C3 <span class="badge fill">Isian</span>
+                    </div>
+                </div>
+                <div class="fill-question">
+                    <div class="question-text">
+                        <strong>Soal:</strong> Salah satu upaya pelestarian tradisi yang bisa dilakukan siswa di lingkungan sekolah adalah __________.
+                    </div>
+                    <div class="answer-section" style="margin-top: 15px;">
+                        <div class="answer-label">Jawaban yang diharapkan:</div>
+                        Aktif mengikuti ekstrakurikuler kesenian tradisional / mengajukan program festival budaya sekolah / mendokumentasikan tradisi lokal dari nenek moyang.
+                    </div>
+                    <div class="explanation" style="margin-top: 15px;">
+                        <div class="explanation-label">📝 Kriteria Penilaian:</div>
+                        <p>Jawaban <span class="highlight">bersifat terbuka tapi terarah</span>. Terima semua jawaban yang relevan dan spesifik dengan tingkat pelaksanaan siswa. Poin: 1) Kejelasan tindakan, 2) Relevansi dengan konteks sekolah, 3) Kreativitas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN D: MENCOCOKKAN -->
+        <section class="section">
+            <h2 class="section-title match">D. Mencocokkan (1 Soal)</h2>
+            
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 1: Menentukan Keberagaman Suku Budaya di Indonesia</div>
+                        <div class="sub-info">Capaian Kompetensi: Menumbuhkan sikap tanggungjajawab dan berperan aktif dalam menjaga dan melestarikan praktik tradisi, kearifan lokal, dan budaya dalam masyarakat global</div>
+                        <div class="sub-info">Materi: Tradisi, Kearifan Lokal, dan Budaya</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C2 <span class="badge match">Match</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <div class="question-text">
+                        <strong>Soal:</strong> Cocokkan tradisi berikut dengan provinsi asalnya!
+                    </div>
+                    <div style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <strong>Kolom A (Tradisi):</strong>
+                            <ul style="margin-top: 10px;">
+                                <li>1. Tabuik</li>
+                                <li>2. Kasada</li>
+                                <li>3. Fahombo</li>
+                                <li>4. Pasola</li>
+                            </ul>
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <strong>Kolom B (Provinsi):</strong>
+                            <ul style="margin-top: 10px;">
+                                <li>a. Sumatera Barat</li>
+                                <li>b. NTT</li>
+                                <li>c. Sumatera Utara</li>
+                                <li>d. Jawa Timur</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="answer-section">
+                    <div class="answer-label">Kunci Jawaban:</div>
+                    1-c (Tabuik - Sumatera Barat), 2-d (Kasada - Jawa Timur), 3-a (Fahombo - Sumatera Utara), 4-b (Pasola - NTT)
+                </div>
+                <div class="explanation">
+                    <div class="explanation-label">📝 Pedoman Penilaian:</div>
+                    <p>Setiap pasangan benar = 1 poin. Total maksimal 4 poin. <span class="highlight">Fokus pada pemahaman spasial</span> keberagaman budaya Indonesia. Tradisi yang dipilih sengaja dari provinsi yang berbeda untuk menguji cakrawala pengetahuan siswa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN E: URAIAN -->
+        <section class="section">
+            <h2 class="section-title essay">E. Uraian (4 Soal)</h2>
+            
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 1-2: Upaya Menjaga dan Melestarikan Tradisi, Kearifan Lokal, dan Budaya</div>
+                        <div class="sub-info">Capaian Kompetensi: Menumbuhkan sikap tanggungjawab dan berperan aktif dalam menjaga dan melestarikan praktik tradisi, kearifan lokal, dan budaya dalam masyarakat global</div>
+                        <div class="sub-info">Materi: Tradisi, Kearifan Lokal, dan Budaya</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C5 <span class="badge essay">Uraian</span>
+                    </div>
+                </div>
+                <div class="essay-question">
+                    <div class="question-text">
+                        <strong>Soal No. 1:</strong> Jelaskan strategi pelestarian tradisi yang dapat dilakukan oleh generasi muda di era digital! Berikan contoh konkret minimal 3!
+                    </div>
+                    <div class="rubric">
+                        <h4>🎯 Rubrik Penilaian:</h4>
+                        <div class="rubric-item"><span>Strategi yang relevan dan spesifik (per poin)</span><span>3 poin</span></div>
+                        <div class="rubric-item"><span>Contoh konkret dan implementatif</span><span>3 poin</span></div>
+                        <div class="rubric-item"><span>Kesinambungan dengan era digital</span><span>2 poin</span></div>
+                        <div class="rubric-item"><span>Konstruksi argumentasi logis</span><span>2 poin</span></div>
+                        <div class="rubric-item"><span><strong>Total Skor</strong></span><span><strong>10 poin</strong></span></div>
+                    </div>
+                    <div class="essay-answer">
+                        <div class="explanation-label">💡 Model Jawaban:</div>
+                        <p><strong>Strategi Pelestarian Digital:</strong></p>
+                        <ul>
+                            <li><strong>1. Digital Storytelling:</strong> Membuat konten (podcast, vlog, reels) tentang tradisi lokal. Contoh: Siswa membuat TikTok series "Cerita dari Kampung" tentang legenda asal-usul desa mereka.</li>
+                            <li><strong>2. E-Archive:</strong> Mendokumentasikan tradisi lisan (dongeng, mantra) ke format digital yang dapat diakses generasi mendatang. Contoh: Proyek kolaboratif membangun website budaya daerah dengan audio rekaman nenek moyang.</li>
+                            <li><strong>3. Gamifikasi Budaya:</strong> Mengembangkan game edukasi berbasis tradisi (contoh: "Sangkuriang" versi interaktif) yang menarik bagi pemuda.</li>
+                        </ul>
+                        <p><strong>Kesimpulan:</strong> Generasi muda harus menjadi <span class="highlight">kurator budaya digital</span> yang menerjemahkan tradisi ke bahasa kontemporer tanpa mengurangi esensi.</p>
+                    </div>
+                </div>
+
+                <div class="essay-question" style="margin-top: 20px;">
+                    <div class="question-text">
+                        <strong>Soal No. 2:</strong> Mengapa kearifan lokal penting untuk ketahanan nasional? Uraikan dengan analisis multidimensional!
+                    </div>
+                    <div class="rubric">
+                        <h4>🎯 Rubrik Penilaian:</h4>
+                        <div class="rubric-item"><span>Analisis dimensi budaya</span><span>3 poin</span></div>
+                        <div class="rubric-item"><span>Analisis dimensi sosial-ekonomi</span><span>3 poin</span></div>
+                        <div class="rubric-item"><span>Analisis dimensi lingkungan</span><span>2 poin</span></div>
+                        <div class="rubric-item"><span>Kesimpulan sintesis</span><span>2 poin</span></div>
+                        <div class="rubric-item"><span><strong>Total Skor</strong></span><span><strong>10 poin</strong></span></div>
+                    </div>
+                    <div class="essay-answer">
+                        <div class="explanation-label">💡 Model Jawaban:</div>
+                        <p><strong>Multidimensional Analysis:</strong></p>
+                        <ul>
+                            <li><strong>1. Dimensi Budaya:</strong> Kearifan lokal (contoh: gotong royong) memperkuat jaringan sosial dan kohesi nasional, menjadi antitesis individualisme hedonis.</li>
+                            <li><strong>2. Dimensi Sosial-Ekonomi:</strong> Modal sosial tinggi memudahkan mobilisasi massa untuk pembangunan (contoh: pembangunan balai desa swadaya), mengurangi beban APBN.</li>
+                            <li><strong>3. Dimensi Lingkungan:</strong> Prinsip konservasi adat (sasi, awig-awig) merupakan solusi indigenous untuk climate change, lebih efektif daripada regulasi top-down.</li>
+                            <li><strong>4. Dimensi Politik:</strong> Budaya musyawarah mufakat (Pancasila) menjadi fondasi demokrasi Indonesia yang berbeda dari liberal-Barat, menciptakan stabilitas politik.</li>
+                        </ul>
+                        <p><strong>Kesimpulan:</strong> Kearifan lokal adalah <span class="highlight">local genius</span> yang harus diinstitusionalisasikan dalam pembangunan nasional untuk mencapai SDGs yang inklusif.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 3: Penerapan Hak dan Kewajiban di Berbagai Lingkungan</div>
+                        <div class="sub-info">Capaian Kompetensi: Menerapkan hak dan kewajiban sebagai warga negara</div>
+                        <div class="sub-info">Materi: Hak & Kewajiban</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C4 <span class="badge essay">Uraian</span>
+                    </div>
+                </div>
+                <div class="essay-question">
+                    <div class="question-text">
+                        <strong>Soal:</strong> Bagaimana penerapan hak dan kewajiban warga negara di lingkungan sekolah dapat mewujudkan demokrasi konstitusional? Berikan contoh minimal 4 kasus!
+                    </div>
+                    <div class="rubric">
+                        <h4>🎯 Rubrik Penilaian:</h4>
+                        <div class="rubric-item"><span>Penjelasan konsep demokrasi konstitusional</span><span>3 poin</span></div>
+                        <div class="rubric-item"><span>Per lingkungan: 2 poin x 4 kasus</span><span>8 poin</span></div>
+                        <div class="rubric-item"><span>Koherensi argumentasi</span><span>2 poin</span></div>
+                        <div class="rubric-item"><span><strong>Total Skor</strong></span><span><strong>13 poin</strong></span></div>
+                    </div>
+                    <div class="essay-answer">
+                        <div class="explanation-label">💡 Model Jawaban:</div>
+                        <p><strong>Demokrasi Konstitusional di Sekolah:</strong></p>
+                        <ul>
+                            <li><strong>1. Hak:</strong> Siswa berhak mengajukan usulan kegiatan OSIS sesuai aspirasi → <strong>Kewajiban:</strong> Mengikuti prosedur musyawarah dan menghormati hasil voting (contoh: proposal festival budaya yang diajukan kelas IX).</li>
+                            <li><strong>2. Hak:</strong> Dapatkan informasi transparan tentang alokasi dana sekolah → <strong>Kewajiban:</strong> Menggunakan informasi secara bertanggung jawab, tidak untuk fitnah (contoh: Laporan keuangan OSIS dipublikasikan di papan pengumuman).</li>
+                            <li><strong>3. Hak:</strong> Mengkritik kebijakan sekolah (misal: jam istirahat) → <strong>Kewajiban:</strong> Menyampaikan kritik melalui saluran resmi (walikelas, buku saran) dengan etika.</li>
+                            <li><strong>4. Hak:</strong> Beragama dan beribadah sesuai keyakinan → <strong>Kewajiban:</strong> Tidak memaksa keyakinan pada siswa lain, menjaga kerukunan (contoh: kegiatan rohani yang tidak diskriminatif).</li>
+                        </ul>
+                        <p><strong>Kesimpulan:</span> Sekolah sebagai <span class="highlight">laboratorium demokrasi</span> tempat siswa belajar menjalankan hak dan kewajiban dalam ruang publik terbatas sebelum memasuki masyarakat madani.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 4: Jenis-jenis Hak dan Kewajiban</div>
+                        <div class="sub-info">Capaian Kompetensi: Menerapkan hak dan kewajiban sebagai warga negara</div>
+                        <div class="sub-info">Materi: Hak & Kewajiban</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C3 <span class="badge essay">Uraian</span>
+                    </div>
+                </div>
+                <div class="essay-question">
+                    <div class="question-text">
+                        <strong>Soal:</strong> Uraikan perbedaan hak sipil-politik dengan hak ekonomi-sosial-budaya serta berikan contoh penerapannya di Indonesia!
+                    </div>
+                    <div class="rubric">
+                        <h4>🎯 Rubrik Penilaian:</h4>
+                        <div class="rubric-item"><span>Perbedaan teoretis (2 poin x 2 kategori)</span><span>4 poin</span></div>
+                        <div class="rubric-item"><span>Contoh sipil-politik (spesifik)</span><span>3 poin</span></div>
+                        <div class="rubric-item"><span>Contoh ekonomi-sosial-budaya (spesifik)</span><span>3 poin</span></div>
+                        <div class="rubric-item"><span><strong>Total Skor</strong></span><span><strong>10 poin</strong></span></div>
+                    </div>
+                    <div class="essay-answer">
+                        <div class="explanation-label">💡 Model Jawaban:</div>
+                        <p><strong>1. Hak Sipil-Politik (Civil-Political Rights):</strong></p>
+                        <ul>
+                            <li><strong>Sifat:</strong> Negatif liberty (freedom from interference), berfokus pada <span class="highlight">proteksi dari negara</span></li>
+                            <li><strong>Contoh di Indonesia:</strong> Kebebasan pers (UU No. 40/1999), hak memilih (Pemilu langsung Presiden 2004), presumption of innocence (assis dehumanisire)</li>
+                        </ul>
+                        
+                        <p><strong>2. Hak Ekonomi-Sosial-Budaya (ESC Rights):</strong></p>
+                        <ul>
+                            <li><strong>Sifat:</strong> Positive liberty (freedom to develop), memerlukan <span class="highlight">intervensi negara</span> untuk memenuhi</li>
+                            <li><strong>Contoh di Indonesia:</strong> Kartu Indonesia Pintar (hak pendidikan), BPJS Kesehatan (hak kesehatan), Program Bedah Rumah (hak perumahan), perlindungan warisan budaya (cagar budaya)</li>
+                        </ul>
+                        
+                        <p><strong>Distingsi Kritis:</strong> Sipil-politik bersifat <strong>immediacy</strong> (langsung bisa diklaim), sementara ESC bersifat <strong>progressive realization</strong> (wajib dicapai bertahap sesuai kemampuan negara).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="competency-info">
+                        <div class="question-title">No. 5: Kemerdekaan Berpendapat</div>
+                        <div class="sub-info">Capaian Kompetensi: Mempraktikkan kemerdekaan berpendapat sebagai warga negara</div>
+                        <div class="sub-info">Materi: Kemerdekaan Berpendapat</div>
+                    </div>
+                    <div class="indicator">
+                        Indikator: C5 <span class="badge essay">Uraian</span>
+                    </div>
+                </div>
+                <div class="essay-question">
+                    <div class="question-text">
+                        <strong>Soal:</strong> Bagaimana strategi mengemukakan pendapat secara terbuka yang efektif dan bertanggung jawab dalam konteks demokrasi Indonesia? Sebutkan penyebab utamanya jika tidak dilakukan secara bertanggung jawab!
+                    </div>
+                    <div class="rubric">
+                        <h4>🎯 Rubrik Penilaian:</h4>
+                        <div class="rubric-item"><span>Strategi efektif (minimal 3 strategi)</span><span>6 poin</span></div>
+                        <div class="rubric-item"><span>Penyebab dampak negatif (minimal 2)</span><span>4 poin</span></div>
+                        <div class="rubric-item"><span>Koherensi dan kedalaman analisis</span><span>3 poin</span></div>
+                        <div class="rubric-item"><span><strong>Total Skor</strong></span><span><strong>13 poin</strong></span></div>
+                    </div>
+                    <div class="essay-answer">
+                        <div class="explanation-label">💡 Model Jawaban:</div>
+                        <p><strong>Strategi Efektif:</strong></p>
+                        <ul>
+                            <li><strong>1. Persiapan Fakta:</strong> Gunakan data valid (riset, statistik) bukan hoaks. Contoh: Saat mengkritik kebijakan sekolah, siswa harus survei dulu kepuasan teman.</li>
+                            <li><strong>2. Channel yang Tepat:</strong> Pilih medium sesuai audiens (surat resmi ke kepala sekolah, debat terbuka di forum OSIS, artikel di media sekolah). Hindari kritik liar di media sosial tanpa konteks.</li>
+                            <li><strong>3. Etika Argumentasi:</strong> Gunakan bahasa santun, fokus pada isu (bukan personal attack), dan tawarkan solusi konstruktif. Prinsip: Attack the idea, not the person.</li>
+                        </ul>
+                        
+                        <p><strong>Penyebab Dampak Negatif Jika Tidak Bertanggung Jawab:</strong></p>
+                        <ul>
+                            <li><strong>1. Disintegrasi Sosial:</strong> Ujaran kebencian SARA bisa memicu konflik horizontal (contoh: kerusuhan 1998, kasusnya Ahok)</li>
+                            <li><strong>2. Kriminalisasi:</strong> Menyebar hoaks atau fitnah bisa dikenai Pasal 27 UU ITE atau Pasal 310 KUHP (penistaan)</li>
+                            <li><strong>3. Diskredit Publik:</strong> Kehilangan kredibilitas dan trust, sehingga kritik di masa depan tidak didengar</li>
+                        </ul>
+                        <p><strong>Kesimpulan:</strong> Kemerdekaan berpendapat adalah <span class="highlight">senjata tajam yang butuh sarung etika</span>. Pancasila sebagai etika politik menjadi filter agar kebebasan tidak menghancurkan kebersamaan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>🎯 <strong>Catatan Penting untuk Guru:</strong></p>
+            <ul style="text-align: left; max-width: 800px; margin: 10px auto; padding-left: 20px;">
+                <li>Kisi-kisi ini disusun berdasarkan <strong>Kurikulum Merdeka</strong> dengan penekanan pada HOTS (Higher Order Thinking Skills)</li>
+                <li>Prosentase soal: PG (50%), Benar/Salah (10%), Isian (2.5%), Mencocokkan (2.5%), Uraian (35%)</li>
+                <li>Indikator C1-C2 untuk pengetahuan dasar, C3-C4 untuk aplikasi, C5 untuk evaluasi/sintesis</li>
+                <li>Contoh soal dapat disesuaikan konteks lokal daerah sekolah masing-masing</li>
+            </ul>
+            <p style="margin-top: 15px; font-size: 0.85em;">📚 Dokumen ini bersifat dinamis dan dapat direvisi sesuai kebutuhan peserta didik</p>
+            <p style="margin-top: 10px; font-size: 0.8em;">Untuk klarifikasi lebih lanjut, hubungi guru mata pelajaran PPKn</p>
+        </footer>
+    </div>
+</body>
+</html>
